@@ -28,11 +28,4 @@ CREATE TABLE Lists (
     category_id INTEGER REFERENCES categories(id) ON DELETE CASCADE,
 );
 
--- Create Items table with foreign keys to Lists
-CREATE TABLE Items (
-    ItemID SERIAL PRIMARY KEY NOT NULL,
-    ListID INT,
-    ItemName VARCHAR(100) NOT NULL,
-    ItemCategory VARCHAR(20) NOT NULL, -- 'Book', 'Movie', 'Restaurant', 'Product'
-    FOREIGN KEY (ListID) REFERENCES Lists(ListID)
-);
+
