@@ -26,14 +26,12 @@ CREATE TABLE Lists (
     id SERIAL PRIMARY KEY NOT NULL,
     user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
     category_id INTEGER REFERENCES categories(id) ON DELETE CASCADE,
-    FOREIGN KEY (user_id) REFERENCES users(users.id),
-    FOREIGN KEY (category_id) REFERENCES categories(category.id)
 );
 
 -- Create Items table with foreign keys to Lists
 CREATE TABLE Items (
-    id SERIAL PRIMARY KEY NOT NULL,
-    list_id INTEGER REFERENCES lists(id) ON DELETE CASCADE,
+    ItemID SERIAL PRIMARY KEY NOT NULL,
+    ListID INT,
     ItemName VARCHAR(100) NOT NULL,
     ItemCategory VARCHAR(20) NOT NULL, -- 'Book', 'Movie', 'Restaurant', 'Product'
     FOREIGN KEY (ListID) REFERENCES Lists(ListID)
