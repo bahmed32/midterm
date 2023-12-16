@@ -28,4 +28,9 @@ CREATE TABLE Lists (
     category_id INTEGER REFERENCES categories(id) ON DELETE CASCADE,
 );
 
-
+CREATE TABLE Items (
+    id SERIAL PRIMARY KEY NOT NULL,
+    list_id INTEGER REFRENCE lists(id) ON DELETE CASCADE,
+    item_name VARCHAR(100) NOT NULL,
+    is_done BOOLEAN NOT NULL DEFAULT FALSE
+);
