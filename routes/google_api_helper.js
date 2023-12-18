@@ -48,7 +48,7 @@ const router  = express.Router();
   });
 
   res.render('users');
-}); 
+
 
 
 module.exports = router;
