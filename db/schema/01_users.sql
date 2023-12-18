@@ -7,6 +7,8 @@ CREATE TABLE users (
 );
 
 -- Create Users table
+
+DROP TABLE IF EXISTS users CASCADE;
 CREATE TABLE Users (
     id SERIAL PRIMARY KEY NOT NULL,
     username VARCHAR(50) NOT NULL,
