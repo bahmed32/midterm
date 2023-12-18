@@ -13,8 +13,7 @@ CREATE TABLE users (
 -- Create Categories table
 CREATE TABLE categories (
     id SERIAL PRIMARY KEY NOT NULL,
-    name VARCHAR(50) NOT NULL,
-    keywords VARCHAR(5000) NOT NULL
+    name VARCHAR(50) NOT NULL
 );
 
 -- Create Lists table with foreign keys to Users and Categories
@@ -32,15 +31,6 @@ CREATE TABLE items (
     is_done BOOLEAN NOT NULL DEFAULT FALSE
 );
 -- https://www.postgresql.org/docs/current/datatype-json.html#JSON-KEYS-ELEMENTS
-
--- VARCHAR
-INSERT into categories (name, keywords) VALUES ('Movies / Series', 'Films;Productions');
-INSERT into categories (name, keywords) VALUES ('Restaurants', '');
-INSERT into categories (name, keywords) VALUES ('Products', '');
-INSERT into categories (name, keywords) VALUES ('FORGOT', '');
-INSERT into categories (name, keywords) VALUES ('Unknown', '');
-
-SELECT * FROM categories WHERE keywords ILIKE '%Films%';
 
 -- JSON
 INSERT into categories (name, keywords) VALUES ('Movies / Series', ['Films', 'Productions']::json);
