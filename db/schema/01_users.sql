@@ -31,7 +31,7 @@ CREATE TABLE Lists (
 -- Create Items table with foreign keys to Lists
 CREATE TABLE Items (
     id SERIAL PRIMARY KEY NOT NULL,
-    list_id INTEGER REFRENCE lists(id) ON DELETE CASCADE,
+    list_id INTEGER REFRENCE lists(id) DELETE CASCADE,
     item_name VARCHAR(100) NOT NULL,
     is_done BOOLEAN NOT NULL DEFAULT FALSE
 );
