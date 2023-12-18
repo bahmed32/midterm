@@ -1,5 +1,14 @@
 // Client facing scripts here
 
+// Escape function to prevent XSS
+const escape = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
+
+
 // validate and submit item when button is clicked
 $(document).ready(function (event) {
   const loadLists = function () {

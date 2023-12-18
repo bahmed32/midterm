@@ -8,7 +8,14 @@
 const express = require('express');
 const router  = express.Router();
 const listQueries = require('../db/queries/lists');
+const googleApi = require('./google_api_helper');
 
+router.post('/', (req, res) => {
+  console.log(req.body);
+  fetchCategory(req, res, next);
+
+  res.render('users');
+}); 
 
 
 module.exports = router;
