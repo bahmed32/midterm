@@ -7,7 +7,8 @@
 
 const express = require('express');
 const router  = express.Router();
-
+const gapi = require('gapi');
+const coffeescript = require('coffeescript');
 
   function authenticate() {
     return gapi.auth2.getAuthInstance()
@@ -52,4 +53,4 @@ const router  = express.Router();
 
 
 module.exports = router;
-module.exports = 
+
