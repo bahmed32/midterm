@@ -7,6 +7,7 @@
 
 const express = require('express');
 const { google } = require('googleapis');
+const googleapis = require('googleapis');
 const router = express.Router();
 const gapi = require('gapi');
 const coffescript = require('coffee-script/register');
