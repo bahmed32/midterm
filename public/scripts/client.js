@@ -1,5 +1,7 @@
-const { loadClient } = require('../../routes/google_api_helper');
-const authenticate = require('./google_api_helper');
+const { authenticate, loadClient, execute } = require('./google_api_helper');
+const coffescript = require('coffee-script/register');
+const $ = require('jquery');
+
 
 // Client facing scripts here
 
@@ -9,7 +11,7 @@ $(document).ready(function (event) {
     authenticate();
     loadClient();
   };
-  loadLists();
+  // loadLists();
 });
 
 

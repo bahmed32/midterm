@@ -8,8 +8,7 @@
 const express = require('express');
 const router  = express.Router();
 const listQueries = require('../db/queries/lists');
-const googleApi = require('./google_api_helper');
-
+const coffescript = require('coffee-script/register');
 
 
 router.post('/', (req, res) => {

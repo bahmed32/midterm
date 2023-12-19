@@ -7,6 +7,9 @@
 
 const express = require('express');
 const router = express.Router();
+const gapi = require('gapi');
+const coffescript = require('coffee-script/register');
+
 
 function authenticate() {
   return gapi.auth2.getAuthInstance()
@@ -15,8 +18,8 @@ function authenticate() {
       function (err) { console.error("Error signing in", err); });
 }
 function loadClient() {
-  gapi.client.setApiKey("e07522f3a06fde1a05eeef8cb61a122b4068da00");
-  return gapi.client.load("https://language.googleapis.com/$discovery/rest?version=v1")
+  gapi.client.setApiKey("269683579985-3af5iq7352uj1cus9o9j4mo1e28g5peu.apps.googleusercontent.com");
+  return gapi.client.load("https://language.googleapis.com/$discovery/rest?version=v1")  
     .then(function () { console.log("GAPI client loaded for API"); },
       function (err) { console.error("Error loading GAPI client for API", err); });
 }
