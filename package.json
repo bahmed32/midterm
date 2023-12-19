@@ -13,15 +13,19 @@
   "license": "ISC",
   "dependencies": {
     "chalk": "^2.4.2",
+    "coffeescript": "^2.7.0",
     "dotenv": "^2.0.0",
     "ejs": "^2.6.2",
-    "express": "^4.17.1",
+    "express": "^4.18.2",
+    "gapi": "0.0.3",
+    "googleapis": "^129.0.0",
     "morgan": "^1.9.1",
     "pg": "^8.5.0",
     "request": "^2.88.2",
     "sass": "^1.35.1"
   },
   "devDependencies": {
+    "coffeescript": "^2.7.0",
     "nodemon": "^2.0.10"
   }
 }

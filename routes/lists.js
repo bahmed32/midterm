@@ -8,7 +8,12 @@
 const express = require('express');
 const router  = express.Router();
 const listQueries = require('../db/queries/lists');
+const coffescript = require('coffee-script/register');
 
 
+router.post('/', (req, res) => {
+  console.log(req.body);
+  res.render('users');
+});
 
 module.exports = router;
