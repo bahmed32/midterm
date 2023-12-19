@@ -6,6 +6,7 @@
  */
 
 const express = require('express');
+const { google } = require('googleapis');
 const router = express.Router();
 const gapi = require('gapi');
 const coffescript = require('coffee-script/register');
@@ -50,3 +51,4 @@ gapi.load("client:auth2", function () {
 });
 
 module.exports = { router, authenticate, loadClient, execute };
+g
