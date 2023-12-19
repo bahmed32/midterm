@@ -23,14 +23,12 @@ const escape = function (str) {
 };
 
 
-
-
 // validate and submit item when button is clicked
 $(document).ready(function (event) {
   const loadLists = function () {
-    $.ajax('/Lists', { method: 'GET' })
-      .then(function (tweets) {
-        renderTweets(tweets);
+    $.ajax('/lists', { method: 'GET' })
+      .then(function (lists) {
+        renderLists(lists);
       })
   };
   loadLists();
