@@ -8,8 +8,6 @@
 const express = require('express');
 const router = express.Router();
 
-
-
 function authenticate() {
   return gapi.auth2.getAuthInstance()
     .signIn({ scope: "https://www.googleapis.com/auth/cloud-language https://www.googleapis.com/auth/cloud-platform" })

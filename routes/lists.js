@@ -9,8 +9,8 @@ const express = require('express');
 const router  = express.Router();
 const listQueries = require('../db/queries/lists');
 const googleApi = require('./google_api_helper');
-const authenticate = require('./google_api_helper');
-const 
+
+
 
 router.post('/', (req, res) => {
   console.log(req.body);

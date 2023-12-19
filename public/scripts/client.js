@@ -1,4 +1,17 @@
+const { loadClient } = require('../../routes/google_api_helper');
+const authenticate = require('./google_api_helper');
+
 // Client facing scripts here
+
+// Authenticate API key on document load
+$(document).ready(function (event) {
+  const loadLists = function () {
+    authenticate();
+    loadClient();
+  };
+  loadLists();
+});
+
 
 // Escape function to prevent XSS
 const escape = function (str) {
@@ -6,6 +19,7 @@ const escape = function (str) {
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 };
+
 
 
 
