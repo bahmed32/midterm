@@ -5,9 +5,12 @@ require('dotenv').config();
 const sassMiddleware = require('./lib/sass-middleware');
 const express = require('express');
 const morgan = require('morgan');
+const categorizeText = require('./helpers/categorizeText').categorizeText;
 
 const PORT = process.env.PORT || 8080;
 const app = express();
+
+
 
 app.set('view engine', 'ejs');
 
@@ -49,6 +52,13 @@ app.get('/', (req, res) => {
   res.render('index');
 });
 
+app.get('/categorize/:text', async(req, res) => {
+  const text = req.params.text;
+  const categories = await categorizeText(text);
+  res.json(categories);
+});
+
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });
+
