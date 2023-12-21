@@ -28,10 +28,8 @@ async function categorizeText(text) {
   try{response = await callClassifyText();}
   catch(e){console.log(e);}
   return response;
-}
+};
 
 module.exports = {
   categorizeText,
 };
-
-categorizeText("Christina Aguilera");
