@@ -52,9 +52,10 @@ app.get('/', (req, res) => {
   res.render('index');
 });
 
-app.get('/categorize/:text', async(req, res) => {
+app.get('/categorize/', async(req, res) => {
   const text = req.params.text;
   const categories = await categorizeText(text);
+  console.log(categories);
   res.json(categories);
 });
 
