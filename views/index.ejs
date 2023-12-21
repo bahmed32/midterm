@@ -5,7 +5,6 @@
   <!-- Meta Information -->
   <title>TODO</title>
   <!-- Always use this line to make it work for all platforms -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
   <!-- External CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
@@ -27,56 +26,22 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="/scripts/client.js"></script>
 
-
   <!-- App JS -->
 
   <script src="https://use.fontawesome.com/7165539a42.js"></script>
   <script src="https://apis.google.com/js/api.js"></script>
-  <script>
-    /**
-     * Sample JavaScript code for language.documents.classifyText
-     * See instructions for running APIs Explorer code samples locally:
-     * https://developers.google.com/explorer-help/code-samples#javascript
-     */
 
-    function authenticate() {
-      return gapi.auth2.getAuthInstance()
-        .signIn({ scope: "https://www.googleapis.com/auth/cloud-language https://www.googleapis.com/auth/cloud-platform" })
-        .then(function () { console.log("Sign-in successful"); },
-          function (err) { console.error("Error signing in", err); });
-    }
-    function loadClient() {
-      gapi.client.setApiKey("YOUR_API_KEY");
-      return gapi.client.load("https://language.googleapis.com/$discovery/rest?version=v1")
-        .then(function () { console.log("GAPI client loaded for API"); },
-          function (err) { console.error("Error loading GAPI client for API", err); });
-    }
-    // Make sure the client is loaded and sign-in is complete before calling this method.
-    function execute() {
-      return gapi.client.language.documents.classifyText({
-        "resource": {
-          "document": {
-            "content": "Jim Carrey",
-            "type": "PLAIN_TEXT",
-            "language": ""
-          },
-          "classificationModelOptions": {
-            "v2Model": {
-              "contentCategoriesVersion": "V2"
-            }
-          }
-        }
-      })
-        .then(function (response) {
-          // Handle the results here (response.result has the parsed body).
-          console.log("Response", response);
-        },
-          function (err) { console.error("Execute error", err); });
-    }
-    gapi.load("client:auth2", function () {
-      gapi.auth2.init({ client_id: "269683579985-3af5iq7352uj1cus9o9j4mo1e28g5peu.apps.googleusercontent.com" });
-    });
-  </script>
+
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <!-- Bootstrap JS and Popper.js -->
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+
 
 </head>
 
@@ -85,7 +50,7 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary fixed-top">
     <!-- <nav class="navbar navbar-expand-lg bg-body-tertiary"> -->
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar</a>
+      <a class="navbar-brand" href="#">Smart To-Do List</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor04"
         aria-controls="navbarColor04" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -98,7 +63,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">To Watch</a>
+            <a class="nav-link" href="#">Profile</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">To Read</a>
@@ -121,26 +86,27 @@
         <div class="login-container">
           <form action="/action_page.php">
             <input type="text" placeholder="Username" name="username">
-            <input type="text" placeholder="Password" name="psw">
+            <input type="password" placeholder="Password" name="password">
             <button type="submit">Login</button>
           </form>
         </div>
       </div>
   </nav>
+  </nav>
   <div class="container mt-5">
-    <h1 class="text-center mb-4">Smart To-Do List</h1>
+    <!-- <h1 class="text-center mb-4">Smart To-Do List</h1> -->
 
     <!-- To Do Form -->
     <form id="toDoForm" class="mb-4">
       <div class="mb-3">
-        <label for="taskInput" class="form-label">New Task</label>
-        <input type="text" class="form-control" id="taskInput" required>
+        <!-- <label for="taskInput" class="form-label">New Task</label> -->
+        <input type="text" class="form-control" id="taskInput" placeholder="New To-Do" required>
       </div>
       <button id="addNew" type="submit" class="btn btn-primary">Add New</button>
-      <button onclick="authenticate().then(loadClient)">authorize and load</button>
-      <button onclick="execute()">execute</button>
     </form>
 
+    <div class="row">
+      <!-- Categories -->
     <div class="row">
       <!-- Categories -->
       <div class="col-md-3">
@@ -164,7 +130,6 @@
           </ul>
         </div>
       </div>
-
       <div class="col-md-3">
         <div class="card">
           <div class="card-header bg-warning">
@@ -175,7 +140,6 @@
           </ul>
         </div>
       </div>
-
       <div class="col-md-3">
         <div class="card">
           <div class="card-header bg-secondary text-white">
@@ -189,56 +153,8 @@
     </div>
   </div>
 
-  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-      document.getElementById('toDoForm').addEventListener('submit', function (event) {
-          event.preventDefault();
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
 
-          const taskInput = document.getElementById('taskInput').value;
-          const category = categorizeTask(taskInput);
-          const listItem = createListItem(category, taskInput);
-          document.getElementById(`${category}List`).appendChild(listItem);
-
-          // Clear the input field
-          document.getElementById('taskInput').value = '';
-      });
-
-      function categorizeTask(task) {
-          // Add logic to categorize the task based on its description
-          const taskLowercase = task.toLowerCase();
-
-          if (taskLowercase.includes('eat')) {
-              return 'toEat';
-          } else if (taskLowercase.includes('read')) {
-              return 'toRead';
-          } else if (taskLowercase.includes('watch')) {
-              return 'toWatch';
-          } else if (taskLowercase.includes('buy')) {
-              return 'toBuy';
-          } else {
-              // Default to 'toDo' if no specific category is determined
-              return 'toDo';
-          }
-      }
-
-      function createListItem(category, task) {
-          const listItem = document.createElement('li');
-          listItem.className = 'list-group-item d-flex justify-content-between align-items-center';
-          listItem.innerHTML = `
-              ${task}
-              <span class="badge bg-danger">Delete</span>
-          `;
-
-          return listItem;
-      }
-
-      // Add event listener for deleting tasks
-      document.body.addEventListener('click', function (event) {
-          if (event.target.classList.contains('badge')) {
-              event.target.parentElement.remove();
-          }
-      });
-  </script> -->
 
 </body>
 
