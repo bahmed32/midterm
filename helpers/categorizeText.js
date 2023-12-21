@@ -33,5 +33,3 @@ async function categorizeText(text) {
 module.exports = {
   categorizeText,
 };
-
-categorizeText();

@@ -17,10 +17,59 @@
   <script defer src="/scripts/users.js"></script>
 </head>
 
+<!--Scroll to top button-->
+<a name="top"></a>
+
 <body>
-  <h1>Users</h1>
-  <button id="fetch-users">Fetch Users via AJAX</button>
-  <ul id="users"></ul>
+
+  <!-- Top nav bar (fixed) -->
+  <nav id="navBar">
+    <h1>Tweeter</h1>
+    <i class="fa-solid fa-bird"></i>
+    <div class="flex" id="writeNew">
+      <p id="writeNew"><strong>Write</strong> a new tweet</p>
+      <i id="arrow" class="fa-solid fa-angles-down"
+        style="color: #ff3535;"></i>
+    </div>
+  </nav>
+  <h1 id="small">Tweeter</h1>
+
+  <!-- Header content -->
+
+  <header class="pfpHead">
+    <section class="feature">
+      <div class="pfpImg">
+        <img src="/images/profile-hex.png" alt="profile image">
+      </div>
+    </section>
+    <br>
+    <div class="headName">
+      <h2>User Name</h2>
+    </div>
+  </header>
+
+  <!-- Page-specific (main) content here -->
+
+  <main class="container">
+    <section class="new-tweet">
+      <form id="publish" class="publish">
+        <textarea name="text" id="textarea" placeholder="What are you humming about?"></textarea>
+        <div>
+          <button id="tweetButton" type="submit">Tweet</button>
+          <output name="counter" class="counter" for="tweet-text">140</output>
+        </div>
+      </form>
+    </section>
+
+    <br>
+
+    <section class="tweet-container">
+      <p></p>
+    </section>
+  </main>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
 </body>
+
+</html>
 
 </html>
