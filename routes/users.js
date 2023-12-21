@@ -4,7 +4,7 @@
  *   these routes are mounted onto /users
  * See: https://expressjs.com/en/guide/using-middleware.html#middleware.router
  */
-
+const coffeeScript = require('coffee-script/register');
 const express = require('express');
 const router  = express.Router();
 

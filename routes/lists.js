@@ -14,14 +14,11 @@ const fetchListsFromDatabase = require('../lib/data-helpers').fetchListsFromData
 
 router.get('/lists', (req, res) => {
   // Fetch the lists from your database
-
 });
 
 router.post('/lists', (req, res) => {
-
-  res.json(response);
-
+  // Create a new list
+    res.json(response);
 });
-
 
 module.exports = router;
