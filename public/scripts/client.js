@@ -14,10 +14,23 @@ $(document).ready(function() {
       })
       .then((response) => {
         console.log(response)
+        response.forEach(function(item) {
+          $('#toEatList').append('<li class="list-group-item">' + item.name + '</li>');
+        });
       })
+    });
     // }
 
-  });
+
+
+  // $.get('/categorize', function(response) {
+  //   // Assuming data is an array of strings
+  //   data.forEach(function(item) {
+  //     $('#toEatList').append('<li class="list-group-item">' + item + '</li>');
+  //   });
+  // // });
+
+  // }); 
 
   const escape = function (str) {
     let div = document.createElement("div");
