@@ -20,6 +20,7 @@ const runSchemaFiles = async () => {
     const sql = fs.readFileSync(`./db/schema/${fn}`, 'utf8');
     console.log(`\t-> Running ${chalk.green(fn)}`);
     await db.query(sql);
+
   }
 };
 

@@ -1,6 +1,9 @@
 -- Drop and recreate Users table
 
 DROP TABLE IF EXISTS users CASCADE;
+DROP TABLE IF EXISTS categories CASCADE;
+DROP TABLE IF EXISTS lists CASCADE;
+DROP TABLE IF EXISTS items CASCADE;
 
 -- Create Users table
 CREATE TABLE users (
