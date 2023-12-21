@@ -30,6 +30,7 @@ async function categorizeText(text) {
   return response;
 };
 
+
 module.exports = {
   categorizeText,
 };
