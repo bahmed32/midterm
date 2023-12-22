@@ -52,8 +52,9 @@ app.get('/', (req, res) => {
   res.render('index');
 });
 
-app.get('/categorize/', async(req, res) => {
-  const text = req.params.text;
+app.post('/categorize', async(req, res) => {
+  console.log(req.body.text);
+  const text = req.body.text;
   const categories = await categorizeText(text);
   console.log(categories);
   res.json(categories);
