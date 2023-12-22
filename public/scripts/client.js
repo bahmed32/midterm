@@ -43,9 +43,11 @@ $(document).ready(function () {
       
       const category = getCategory(highestConfidenceItem.name);
       if (category) {
-        $(listMappings[category]).append('<li class="list-group-item">' + text + '</li>');
+        $(listMappings[category]).append('<li class="list-group-item">' +
+          '<input type="checkbox" class="form-check-input" id="itemCheckbox"> ' +
+          '<label class="form-check-label" for="itemCheckbox">' + text + '</label>' +
+          '</li>');
       };
-
       });
     })
   });
