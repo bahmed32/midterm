@@ -15,10 +15,10 @@ $(document).ready(function () {
     .then((response) => {
 
       const categoryMappings = {
-        'To Eat': '/Food & Drink',
-        'To Read': ['/Books & Literature', '/Finance/'],
-        'To Watch': ['/Arts & Entertainment/TV & Video', '/Arts & Entertainment/Performing Arts/', '/Arts & Entertainment/Movies & TV'],
-        'To Buy': ['/Shopping', '/Games/', '/Sports/Sporting Goods/',]
+        'To Eat': ['/Food & Drink/'],
+        'To Read': ['/Books & Literature/', '/Finance/'],
+        'To Watch': ['/Arts & Entertainment/TV & Video/', '/Arts & Entertainment/Performing Arts/', '/Arts & Entertainment/Movies & TV/'],
+        'To Buy': ['/Shopping/', '/Games/', '/Sports/Sporting Goods/']
       };
 
       function getCategory(name) {
@@ -43,11 +43,14 @@ $(document).ready(function () {
 
       const category = getCategory(highestConfidenceItem.name);
       if (category) {
-        $(listMappings[category]).append('<li class="list-group-item">' +
+        const listItem = $('<li class="list-group-item">' +
           '<input type="checkbox" class="form-check-input" id="itemCheckbox"> ' +
           '<label class="form-check-label" for="itemCheckbox">' + text + '</label>' +
+          '<button class="move-item-button">Move</button>' +
+          '<button class="delete-item-button">Delete</button>' +
           '</li>');
-      };
+        $(listMappings[category]).append(listItem);
+      }
       this.reset();
     });
     })
@@ -65,4 +68,11 @@ $(document).ready(function (event) {
   });
 });
 
+$(document).on('click', '.move-item-button', function() {
+  // Move the list item to another list
+});
 
+$(document).on('click', '.delete-item-button', function() {
+  // Delete the list item
+  $(this).parent().remove();
+});
