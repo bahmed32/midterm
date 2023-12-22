@@ -8516,6 +8516,12 @@ textarea.form-control-lg {
   white-space: nowrap !important;
 }
 
+.item-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 /* rtl:begin:remove */
 .text-break {
   word-wrap: break-word !important;

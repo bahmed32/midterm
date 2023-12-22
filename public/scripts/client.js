@@ -16,9 +16,9 @@ $(document).ready(function () {
 
       const categoryMappings = {
         'To Eat': '/Food & Drink',
-        'To Read': ['/Books & Literature', '/Finance/',  ,
+        'To Read': ['/Books & Literature', '/Finance/'],
         'To Watch': ['/Arts & Entertainment/TV & Video', '/Arts & Entertainment/Performing Arts/', '/Arts & Entertainment/Movies & TV'],
-        'To Buy': '/Shopping'
+        'To Buy': ['/Shopping', '/Games/', '/Sports/Sporting Goods/',]
       };
 
       function getCategory(name) {
