@@ -48,6 +48,21 @@ $(document).ready(function () {
   });
 });
 
+// Hide new tweet area on page load
+$(document).ready(function (event) {
+  $('.profile-info').hide(); 
+});
+
+// Toggle new tweet area when button is clicked
+$(document).ready(function (event) {
+  $('#nav-link').click(function () {
+    console.log('clicked');
+    $('.profile-info').slideToggle();
+  })
+})
+
+
+
 // }
 
 
