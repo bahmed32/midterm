@@ -18,7 +18,7 @@ router.get('/lists', (req, res) => {
 
 router.post('/lists', (req, res) => {
   // Create a new list
-    res.json(response);
+
 });
 
 module.exports = router;
