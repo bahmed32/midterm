@@ -1,10 +1,10 @@
 // Client facing scripts here
 
-
 $(document).ready(function () {
 
   $("#toDoForm").submit(function (event) {
     event.preventDefault();
+    console.log("form submitted");
     // function classifyText() {
     const text = $("#taskInput").val();
     $.ajax({
@@ -13,7 +13,6 @@ $(document).ready(function () {
       data: { text },
     })
     .then((response) => {
-      console.log(response);
 
       const categoryMappings = {
         'To Eat': '/Food & Drink',
@@ -38,29 +37,30 @@ $(document).ready(function () {
         'To Buy': '#toBuyList'
       };
 
-      response.forEach(function (item) {
-        const category = getCategory(item.name);
-        if (category) {
-          $(listMappings[category]).append('<li class="list-group-item">' + text + '</li>');
-        }
+      response.sort((a, b) => b.confidence - a.confidence); // Sort in descending order of confidence
+
+      const highestConfidenceItem = response[0]; // Get the item with the highest confidence
+      
+      const category = getCategory(highestConfidenceItem.name);
+      if (category) {
+        $(listMappings[category]).append('<li class="list-group-item">' + text + '</li>');
+      };
+
       });
     })
   });
-});
+
 
 // Hide profile area on page load
 $(document).ready(function (event) {
   $('.profile-info').hide(); 
-});
 
 // Toggle profile when button is clicked
-$(document).ready(function (event) {
   $('#profileButton').click(function () {
     $('.profile-info').slideToggle();
     event.preventDefault();      
-  })
+  });
 });
-
 
 
 // }
