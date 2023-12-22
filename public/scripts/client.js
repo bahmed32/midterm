@@ -15,10 +15,10 @@ $(document).ready(function () {
     .then((response) => {
 
       const categoryMappings = {
-        'To Eat': ['/Food & Drink/'],
-        'To Read': ['/Books & Literature/', '/Finance/'],
-        'To Watch': ['/Arts & Entertainment/TV & Video/', '/Arts & Entertainment/Performing Arts/', '/Arts & Entertainment/Movies & TV/'],
-        'To Buy': ['/Shopping/', '/Games/', '/Sports/Sporting Goods/']
+        'To Eat': '/Food & Drink/',
+        'To Read': '/Books & Literature/',
+        'To Watch': '/Arts & Entertainment/',
+        'To Buy': '/Shopping/'
       };
 
       function getCategory(name) {
